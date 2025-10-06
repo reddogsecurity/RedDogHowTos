@@ -1,0 +1,30 @@
+# Output directories
+ADScan/
+*.csv
+*.json
+*.html
+
+# Exclude sample outputs (if you want to keep examples, create a separate folder)
+!config/*.json
+
+# PowerShell
+*.ps1xml
+
+# System files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+

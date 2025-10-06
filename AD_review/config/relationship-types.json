@@ -1,0 +1,142 @@
+{
+  "relationshipTypes": {
+    "adMembership": {
+      "description": "User membership in AD groups",
+      "source": "ad-users.csv",
+      "target": "ad-groups.csv",
+      "edgeType": "memberOf",
+      "direction": "user -> group",
+      "riskWeight": 5
+    },
+    "entraRoleAssignment": {
+      "description": "User/group assignment to Entra roles",
+      "source": "entra-role-assignments.json",
+      "target": "entra-roles.json",
+      "edgeType": "assignedTo",
+      "direction": "principal -> role",
+      "riskWeight": 8
+    },
+    "gpoLinks": {
+      "description": "GPO links to Organizational Units",
+      "source": "gpo-data.csv",
+      "target": "ou-data.csv", 
+      "edgeType": "appliesTo",
+      "direction": "gpo -> ou",
+      "riskWeight": 4
+    },
+    "ouDelegation": {
+      "description": "Delegation permissions on OUs",
+      "source": "ou-delegations.csv",
+      "target": "ou-data.csv",
+      "edgeType": "delegatedTo",
+      "direction": "ou -> principal",
+      "riskWeight": 6
+    },
+    "domainTrusts": {
+      "description": "Domain and forest trust relationships",
+      "source": "domain-trusts.csv",
+      "target": "domain-trusts.csv",
+      "edgeType": "trusts",
+      "direction": "domain -> domain",
+      "riskWeight": 4
+    },
+    "servicePrincipalGrants": {
+      "description": "Service principal OAuth grants and permissions",
+      "source": "service-principals.csv",
+      "target": "oauth-scopes.csv",
+      "edgeType": "granted",
+      "direction": "sp -> scope",
+      "riskWeight": 7
+    },
+    "conditionalAccessTargets": {
+      "description": "Conditional Access policies targeting users/groups",
+      "source": "ca-policies.csv",
+      "target": "ca-targets.csv",
+      "edgeType": "targets",
+      "direction": "policy -> target",
+      "riskWeight": 3
+    },
+    "serviceAccountUsage": {
+      "description": "Service accounts used by applications",
+      "source": "service-accounts.csv",
+      "target": "applications.csv",
+      "edgeType": "usedBy",
+      "direction": "account -> application",
+      "riskWeight": 7
+    }
+  },
+  "nodeTypes": {
+    "user": {
+      "color": "#fdfefe",
+      "shape": "ellipse",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22", 
+        "Low": "#f1c40f"
+      }
+    },
+    "group": {
+      "color": "#d6eaf8",
+      "shape": "box",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "role": {
+      "color": "#f8d7da",
+      "shape": "diamond",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "serviceAccount": {
+      "color": "#fff3cd",
+      "shape": "hexagon",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "gpo": {
+      "color": "#d1ecf1",
+      "shape": "folder",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "ou": {
+      "color": "#e2e3e5",
+      "shape": "rectangle",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "domain": {
+      "color": "#f8f9fa",
+      "shape": "cylinder",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    },
+    "application": {
+      "color": "#d4edda",
+      "shape": "triangle",
+      "riskColorMap": {
+        "High": "#e74c3c",
+        "Medium": "#e67e22",
+        "Low": "#f1c40f"
+      }
+    }
+  }
+}
