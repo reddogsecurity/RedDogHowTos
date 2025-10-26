@@ -47,8 +47,8 @@ Yandex operates the largest search engine in Russia (roughly ~65% market share i
 
 ## Yandex Search Operators
 
-| Operator          | Description                                                                                                       |
-| `"I * music"`     | Find results with any word where the asterisk (`*`) is placed.                                                    |
+| Operator                                                    | Description                                                             |
+| `"I * music"`                                               | Find results with any word where the asterisk (`*`) is placed.          |
 | `Cheshire cat                                               | hatter                                                                  |
 | `croquet +flamingo`                                         | Requires the page to contain `flamingo`, but not necessarily `croquet`. |
 | `rhost:org.wikipedia.*`                                     | Reverse host search.                                                    |
