@@ -1,0 +1,190 @@
+﻿<#
+.SYNOPSIS
+    Demonstrates the Excel and HTML export functionality
+
+.DESCRIPTION
+    This script shows how to:
+    1. Use existing assessment data
+    2. Generate Excel workbook for detailed analysis
+    3. Generate HTML executive brief for stakeholders
+    4. Automatically open both outputs
+
+.PARAMETER OutputFolder
+    Path to assessment output folder (default: $env:TEMP\ADScan)
+
+.PARAMETER Timestamp
+    Specific timestamp to use (if omitted, finds latest assessment)
+
+.EXAMPLE
+    .\Demo-ReportExports.ps1
+
+.EXAMPLE
+    .\Demo-ReportExports.ps1 -OutputFolder "C:\Assessments\2025-10" -Timestamp "20251007-120000"
+#>
+
+[CmdletBinding()]
+param(
+    [string]$OutputFolder = "$env:TEMP\ADScan",
+    [string]$Timestamp
+)
+
+Write-Host "`n╔═══════════════════════════════════════╗" -ForegroundColor Cyan
+Write-Host "║  Assessment Report Export Demo       ║" -ForegroundColor Cyan
+Write-Host "╚═══════════════════════════════════════╝`n" -ForegroundColor Cyan
+
+# Validate output folder exists
+if (-not (Test-Path $OutputFolder)) {
+    Write-Error "Output folder not found: $OutputFolder"
+    Write-Host "Run the assessment first: .\script.ps1 -IncludeEntra" -ForegroundColor Yellow
+    exit 1
+}
+
+# Find timestamp if not provided
+if (-not $Timestamp) {
+    Write-Host "Finding latest assessment..." -ForegroundColor Gray
+    
+    # Look for KPI file to determine latest timestamp
+    $kpiFiles = Get-ChildItem -Path $OutputFolder -Filter "kpis-*.json" -File | 
+        Sort-Object LastWriteTime -Descending
+    
+    if ($kpiFiles.Count -eq 0) {
+        Write-Error "No assessment files found in $OutputFolder"
+        Write-Host "Run the assessment first: .\script.ps1 -IncludeEntra" -ForegroundColor Yellow
+        exit 1
+    }
+    
+    # Extract timestamp from filename
+    $latestFile = $kpiFiles[0].Name
+    if ($latestFile -match 'kpis-(.+)\.json') {
+        $Timestamp = $Matches[1]
+        Write-Host "[OK] Found assessment: $Timestamp" -ForegroundColor Green
+    } else {
+        Write-Error "Could not parse timestamp from file: $latestFile"
+        exit 1
+    }
+}
+
+Write-Host "Using assessment: $Timestamp" -ForegroundColor White
+Write-Host "Output folder: $OutputFolder`n" -ForegroundColor White
+
+# Check if required files exist
+$requiredFiles = @(
+    "risk-findings-$Timestamp.csv",
+    "kpis-$Timestamp.json"
+)
+
+$missingFiles = @()
+foreach ($file in $requiredFiles) {
+    $filePath = Join-Path $OutputFolder $file
+    if (-not (Test-Path $filePath)) {
+        $missingFiles += $file
+    }
+}
+
+if ($missingFiles.Count -gt 0) {
+    Write-Warning "Missing required files:"
+    $missingFiles | ForEach-Object { Write-Host "  - $_" -ForegroundColor Yellow }
+    Write-Host "`nRun the assessment first: .\script.ps1 -IncludeEntra" -ForegroundColor Yellow
+    exit 1
+}
+
+# Export 1: Excel Workbook
+Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
+Write-Host "Step 1: Generating Excel Workbook" -ForegroundColor Cyan
+Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
+
+$excelPath = &amp; "$PSScriptRoot\Export-ExcelReport.ps1" -OutputFolder $OutputFolder -Timestamp $Timestamp
+
+if ($excelPath -and (Test-Path $excelPath)) {
+    Write-Host "`n[OK] Excel workbook ready!" -ForegroundColor Green
+} else {
+    Write-Warning "Excel export may have failed. Check output above."
+}
+
+# Export 2: Executive Brief (HTML)
+Write-Host "`n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
+Write-Host "Step 2: Generating Executive Brief" -ForegroundColor Cyan
+Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
+
+$htmlPath = &amp; "$PSScriptRoot\Export-ExecutiveBrief.ps1" -OutputFolder $OutputFolder -Timestamp $Timestamp
+
+if ($htmlPath -and (Test-Path $htmlPath)) {
+    Write-Host "`n[OK] Executive brief ready!" -ForegroundColor Green
+} else {
+    Write-Warning "HTML export may have failed. Check output above."
+}
+
+# Summary
+Write-Host "`n╔═══════════════════════════════════════╗" -ForegroundColor Green
+Write-Host "║  Report Generation Complete! [OK]        ║" -ForegroundColor Green
+Write-Host "╚═══════════════════════════════════════╝`n" -ForegroundColor Green
+
+Write-Host " Generated Reports:" -ForegroundColor White
+if ($excelPath -and (Test-Path $excelPath)) {
+    Write-Host "  [OK] Excel: $excelPath" -ForegroundColor Green
+}
+if ($htmlPath -and (Test-Path $htmlPath)) {
+    Write-Host "  [OK] HTML: $htmlPath" -ForegroundColor Green
+}
+
+Write-Host "`n📋 Usage Guide:" -ForegroundColor Cyan
+Write-Host "  Excel Workbook:" -ForegroundColor White
+Write-Host "    - Contains all raw data across multiple tabs" -ForegroundColor Gray
+Write-Host "    - Use for detailed analysis and remediation tracking" -ForegroundColor Gray
+Write-Host "    - Share with technical teams and security analysts" -ForegroundColor Gray
+Write-Host "    - Severity-based conditional formatting highlights risks" -ForegroundColor Gray
+
+Write-Host "`n  Executive Brief:" -ForegroundColor White
+Write-Host "    - High-level summary with key metrics" -ForegroundColor Gray
+Write-Host "    - Print to PDF for executive distribution" -ForegroundColor Gray
+Write-Host "    - Contains top 10 prioritized findings" -ForegroundColor Gray
+Write-Host "    - Includes phased remediation recommendations" -ForegroundColor Gray
+
+Write-Host "`n Next Steps:" -ForegroundColor Yellow
+Write-Host "  1. Review the executive brief in your browser" -ForegroundColor White
+Write-Host "  2. Print the HTML to PDF for stakeholder distribution" -ForegroundColor White
+Write-Host "  3. Use the Excel workbook for detailed remediation planning" -ForegroundColor White
+Write-Host "  4. Schedule remediation kickoff meeting with findings" -ForegroundColor White
+
+# Ask if user wants to open the files
+Write-Host "`n" -NoNewline
+$openFiles = Read-Host "Would you like to open these files now? (Y/N)"
+
+if ($openFiles -eq 'Y' -or $openFiles -eq 'y') {
+    Write-Host "`nOpening files..." -ForegroundColor Cyan
+    
+    if ($htmlPath -and (Test-Path $htmlPath)) {
+        Write-Host "  Opening HTML brief in browser..." -ForegroundColor Gray
+        Start-Process $htmlPath
+        Start-Sleep -Seconds 1
+    }
+    
+    if ($excelPath -and (Test-Path $excelPath)) {
+        Write-Host "  Opening Excel workbook..." -ForegroundColor Gray
+        Invoke-Item $excelPath
+    }
+    
+    Write-Host "`n[OK] Files opened!" -ForegroundColor Green
+} else {
+    Write-Host "`nFiles are ready in: $OutputFolder" -ForegroundColor Gray
+    Write-Host "`nTo open manually:" -ForegroundColor Cyan
+    if ($htmlPath) {
+        Write-Host "  Start-Process '$htmlPath'" -ForegroundColor Gray
+    }
+    if ($excelPath) {
+        Write-Host "  Invoke-Item '$excelPath'" -ForegroundColor Gray
+    }
+}
+
+Write-Host "`n═══════════════════════════════════════" -ForegroundColor Cyan
+Write-Host "Demo Complete!" -ForegroundColor Cyan
+Write-Host "═══════════════════════════════════════`n" -ForegroundColor Cyan
+
+# Return paths for scripting
+return [PSCustomObject]@{
+    ExcelPath = $excelPath
+    HtmlPath = $htmlPath
+    Timestamp = $Timestamp
+    OutputFolder = $OutputFolder
+}
+
