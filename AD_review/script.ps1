@@ -659,6 +659,14 @@ function Analyze-Inventory {
     $kpis.ConditionalAccessPolicies = ($ca | Measure-Object).Count
     $kpis.ServicePrincipals = $sps.Count
 
+    # ========== DATA PREPARATION FOR RISK RULES ==========
+    
+    # Prepare filtered datasets for risk analysis
+    $pwdNeverExpires = $adUsers | Where-Object { $_.Enabled -eq 'True' -and $_.PasswordNeverExpires -eq 'True' }
+    $delegUsers = $adUsers | Where-Object { $_.TrustedForDelegation -eq 'True' -or $_.TrustedToAuthForDelegation -eq 'True' }
+    $unconstrainedComps = $adComps | Where-Object { $_.TrustedForDelegation -eq 'True' }
+    $bigGroups = $adGroups | Where-Object { [int]$_.MemberCount -ge 500 }
+
     # ========== RISK RULES ==========
 
     # 1) AD: stale but enabled users (>90d no logon)
