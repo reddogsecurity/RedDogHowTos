@@ -1,0 +1,234 @@
+﻿# Test-DiagramGeneration.ps1
+# Quick test script to validate diagram generation without running full assessment
+
+<#
+.SYNOPSIS
+Tests diagram generation with sample data
+
+.DESCRIPTION
+Creates sample assessment data and generates all diagram types to verify the
+visual diagram generation modules are working correctly.
+
+.EXAMPLE
+.\Test-DiagramGeneration.ps1
+
+.EXAMPLE
+.\Test-DiagramGeneration.ps1 -OutputFolder "C:\Temp\DiagramTest"
+#>
+
+param(
+    [string]$OutputFolder = "$env:TEMP\DiagramTest"
+)
+
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "Testing Diagram Generation" -ForegroundColor Cyan
+Write-Host "========================================`n" -ForegroundColor Cyan
+
+# Create output folder
+if (-not (Test-Path $OutputFolder)) {
+    New-Item -Path $OutputFolder -ItemType Directory -Force | Out-Null
+    Write-Host "[OK] Created output folder: $OutputFolder" -ForegroundColor Green
+}
+
+$timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
+
+# Create sample data files
+Write-Host "Creating sample assessment data..." -ForegroundColor Cyan
+
+# Sample Entra role assignments
+$sampleRoles = @(
+    [PSCustomObject]@{
+        Role = "Global Administrator"
+        Template = "62e90394-69f5-4237-9190-012177145e10"
+        MemberCount = 3
+        Members = @(
+            [PSCustomObject]@{
+                Id = "user1-id"
+                DisplayName = "John Admin"
+                UserPrincipalName = "john.admin@contoso.com"
+                Type = "#microsoft.graph.user"
+            },
+            [PSCustomObject]@{
+                Id = "user2-id"
+                DisplayName = "Jane SuperAdmin"
+                UserPrincipalName = "jane.admin@contoso.com"
+                Type = "#microsoft.graph.user"
+            },
+            [PSCustomObject]@{
+                Id = "user3-id"
+                DisplayName = "Service Account"
+                UserPrincipalName = "svc.admin@contoso.com"
+                Type = "#microsoft.graph.user"
+            }
+        )
+    },
+    [PSCustomObject]@{
+        Role = "Security Administrator"
+        Template = "194ae4cb-b126-40b2-bd5b-6091b380977d"
+        MemberCount = 2
+        Members = @(
+            [PSCustomObject]@{
+                Id = "user4-id"
+                DisplayName = "Security Lead"
+                UserPrincipalName = "security.lead@contoso.com"
+                Type = "#microsoft.graph.user"
+            },
+            [PSCustomObject]@{
+                Id = "user5-id"
+                DisplayName = "SOC Analyst"
+                UserPrincipalName = "soc.analyst@contoso.com"
+                Type = "#microsoft.graph.user"
+            }
+        )
+    },
+    [PSCustomObject]@{
+        Role = "User Administrator"
+        Template = "fe930be7-5e62-47db-91af-98c3a49a38b1"
+        MemberCount = 2
+        Members = @(
+            [PSCustomObject]@{
+                Id = "user6-id"
+                DisplayName = "HR Admin"
+                UserPrincipalName = "hr.admin@contoso.com"
+                Type = "#microsoft.graph.user"
+            },
+            [PSCustomObject]@{
+                Id = "user7-id"
+                DisplayName = "Helpdesk"
+                UserPrincipalName = "helpdesk@contoso.com"
+                Type = "#microsoft.graph.user"
+            }
+        )
+    }
+)
+
+$rolesJson = Join-Path $OutputFolder "entra-role-assignments-$timestamp.json"
+$sampleRoles | ConvertTo-Json -Depth 5 | Out-File $rolesJson -Force
+Write-Host "  [OK] Created: entra-role-assignments-$timestamp.json" -ForegroundColor Gray
+
+# Sample AD privileged groups
+$sampleADGroups = @(
+    [PSCustomObject]@{
+        Group = "Domain Admins"
+        Count = 4
+        Members = @(
+            [PSCustomObject]@{ Name = "Administrator"; SamAccountName = "Administrator"; objectClass = "user" },
+            [PSCustomObject]@{ Name = "John Admin"; SamAccountName = "johnadmin"; objectClass = "user" },
+            [PSCustomObject]@{ Name = "Jane Admin"; SamAccountName = "janeadmin"; objectClass = "user" },
+            [PSCustomObject]@{ Name = "Service Admin"; SamAccountName = "svcadmin"; objectClass = "user" }
+        )
+    },
+    [PSCustomObject]@{
+        Group = "Enterprise Admins"
+        Count = 2
+        Members = @(
+            [PSCustomObject]@{ Name = "Administrator"; SamAccountName = "Administrator"; objectClass = "user" },
+            [PSCustomObject]@{ Name = "Enterprise Admin"; SamAccountName = "entadmin"; objectClass = "user" }
+        )
+    },
+    [PSCustomObject]@{
+        Group = "Schema Admins"
+        Count = 1
+        Members = @(
+            [PSCustomObject]@{ Name = "Administrator"; SamAccountName = "Administrator"; objectClass = "user" }
+        )
+    }
+)
+
+$adGroupsJson = Join-Path $OutputFolder "ad-privileged-groups-$timestamp.json"
+$sampleADGroups | ConvertTo-Json -Depth 5 | Out-File $adGroupsJson -Force
+Write-Host "  [OK] Created: ad-privileged-groups-$timestamp.json" -ForegroundColor Gray
+
+# Sample auth methods (MFA coverage)
+$sampleAuthMethods = @(
+    [PSCustomObject]@{ UserId = "user1-id"; UserPrincipalName = "john.admin@contoso.com"; DisplayName = "John Admin"; HasMFA = "False" },
+    [PSCustomObject]@{ UserId = "user2-id"; UserPrincipalName = "jane.admin@contoso.com"; DisplayName = "Jane SuperAdmin"; HasMFA = "True" },
+    [PSCustomObject]@{ UserId = "user3-id"; UserPrincipalName = "svc.admin@contoso.com"; DisplayName = "Service Account"; HasMFA = "False" },
+    [PSCustomObject]@{ UserId = "user4-id"; UserPrincipalName = "security.lead@contoso.com"; DisplayName = "Security Lead"; HasMFA = "True" },
+    [PSCustomObject]@{ UserId = "user5-id"; UserPrincipalName = "soc.analyst@contoso.com"; DisplayName = "SOC Analyst"; HasMFA = "True" },
+    [PSCustomObject]@{ UserId = "user6-id"; UserPrincipalName = "hr.admin@contoso.com"; DisplayName = "HR Admin"; HasMFA = "False" },
+    [PSCustomObject]@{ UserId = "user7-id"; UserPrincipalName = "helpdesk@contoso.com"; DisplayName = "Helpdesk"; HasMFA = "True" }
+)
+
+$authCsv = Join-Path $OutputFolder "entra-authmethods-$timestamp.csv"
+$sampleAuthMethods | Export-Csv $authCsv -NoTypeInformation -Force
+Write-Host "  [OK] Created: entra-authmethods-$timestamp.csv" -ForegroundColor Gray
+
+Write-Host "`nSample data created successfully!`n" -ForegroundColor Green
+
+# Import diagram generation module
+Write-Host "Importing diagram generation modules..." -ForegroundColor Cyan
+$ModulePath = Join-Path $PSScriptRoot "Modules"
+
+try {
+    Import-Module (Join-Path $ModulePath "Helpers.psm1") -Force
+    Import-Module (Join-Path $ModulePath "PrivilegedAccess-MapGenerator.psm1") -Force
+    Write-Host "[OK] Modules loaded successfully" -ForegroundColor Green
+} catch {
+    Write-Error "Failed to load modules: $($_.Exception.Message)"
+    exit 1
+}
+
+# Generate Privileged Access Map only (test the new module)
+Write-Host "`nGenerating Privileged Access Map..." -ForegroundColor Cyan
+
+try {
+    $result = New-PrivilegedAccessMap `
+        -OutputFolder $OutputFolder `
+        -Timestamp $timestamp `
+        -PrivilegedRolesJson $rolesJson `
+        -ADGroupsJson $adGroupsJson `
+        -AuthMethodsCsv $authCsv
+    
+    Write-Host "`n========================================" -ForegroundColor Green
+    Write-Host "Diagram Generation Test Complete!" -ForegroundColor Green
+    Write-Host "========================================" -ForegroundColor Green
+    
+    Write-Host "`nGenerated Files:" -ForegroundColor White
+    Write-Host "  - DOT: $($result.Dot)" -ForegroundColor Gray
+    Write-Host "  - Mermaid: $($result.Mermaid)" -ForegroundColor Gray
+    if ($result.PNG) {
+        Write-Host "  - PNG: $($result.PNG)" -ForegroundColor Gray
+    } else {
+        Write-Host "  - PNG: (Graphviz not installed - skipped)" -ForegroundColor Yellow
+        Write-Host "    Install from: https://graphviz.org/download/" -ForegroundColor Yellow
+    }
+    
+    Write-Host "`nStatistics:" -ForegroundColor White
+    Write-Host "  - Users: $($result.Stats.UserCount)" -ForegroundColor Gray
+    Write-Host "  - Users without MFA: $($result.Stats.UsersWithoutMFA)" -ForegroundColor $(if ($result.Stats.UsersWithoutMFA -gt 0) { 'Red' } else { 'Green' })
+    Write-Host "  - AD Groups: $($result.Stats.ADGroupCount)" -ForegroundColor Gray
+    Write-Host "  - Entra Roles: $($result.Stats.EntraRoleCount)" -ForegroundColor Gray
+    Write-Host "  - High Risk Users: $($result.Stats.HighRiskUsers)" -ForegroundColor $(if ($result.Stats.HighRiskUsers -gt 0) { 'Red' } else { 'Green' })
+    
+    Write-Host "`nHow to View:" -ForegroundColor White
+    if ($result.PNG) {
+        Write-Host "  1. Open PNG: Invoke-Item '$($result.PNG)'" -ForegroundColor Gray
+    }
+    Write-Host "  2. View Mermaid at: https://mermaid.live" -ForegroundColor Gray
+    Write-Host "     Get-Content '$($result.Mermaid)' | Set-Clipboard" -ForegroundColor Gray
+    Write-Host "  3. Render DOT: dot -Tpng '$($result.Dot)' -o output.png" -ForegroundColor Gray
+    
+    # Auto-open PNG if available
+    if ($result.PNG -and (Test-Path $result.PNG)) {
+        Write-Host "`n Opening diagram..." -ForegroundColor Cyan
+        Start-Sleep -Milliseconds 500
+        Invoke-Item $result.PNG
+    }
+    
+    Write-Host "`n✅ Test PASSED - Diagram generation is working!" -ForegroundColor Green
+    
+} catch {
+    Write-Host "`n❌ Test FAILED" -ForegroundColor Red
+    Write-Error $_.Exception.Message
+    Write-Host "`nStack Trace:" -ForegroundColor Yellow
+    Write-Host $_.ScriptStackTrace -ForegroundColor Gray
+    exit 1
+}
+
+Write-Host "`nNext Steps:" -ForegroundColor White
+Write-Host "  1. Review the generated diagram files in: $OutputFolder" -ForegroundColor Gray
+Write-Host "  2. Install Graphviz for PNG rendering: https://graphviz.org/download/" -ForegroundColor Gray
+Write-Host "  3. Run full assessment: .\script.ps1 -IncludeEntra -GenerateDiagrams" -ForegroundColor Gray
+Write-Host ""
+
