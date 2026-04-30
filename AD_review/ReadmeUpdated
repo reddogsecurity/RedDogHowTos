@@ -1,0 +1,19 @@
+Analyst findings produced:
+
+Malicious URL clicks (T1566.002) — escalated to Critical when AdminCount=1 user clicked
+Spearphishing campaign detection (3+ users clicking same domain)
+DLP violations / data exfiltration (T1048)
+BEC / impersonation attacks (T1656), campaign clustering
+Email password spray from SIEM events (T1110.003)
+Suspicious inbox forwarding rules (T1114)
+Credentials are loaded exclusively from env vars — MIMECAST_ACCESS_KEY, MIMECAST_SECRET_KEY, MIMECAST_APP_ID, MIMECAST_APP_KEY.
+
+To run:
+
+
+$env:MIMECAST_ACCESS_KEY = "..."
+$env:MIMECAST_SECRET_KEY = "..."   # Base64-encoded
+$env:MIMECAST_APP_ID    = "..."
+$env:MIMECAST_APP_KEY   = "..."
+
+.\Invoke-DailyAlert.ps1 -IncludeEntra -IncludeThreatHunting -IncludeMimecast
