@@ -1,0 +1,326 @@
+Enriching findings with MITRE ATT&CK mappings...
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-NumericRiskScore : The term 'Get-NumericRiskScore' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:301 char:22
++             $score = Get-NumericRiskScore -Severity $finding.Severity ...
++                      ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-NumericRiskScore:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-BusinessImpact : The term 'Get-BusinessImpact' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\Modules\MITRE-Mapper.psm1:306 char:20
++             $biz = Get-BusinessImpact -Finding @{ Area=$areaValue; Fi ...
++                    ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-BusinessImpact:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+  âœ Enriched 161 findings with MITRE mappings -ForegroundColor Green
+
+    return                                                                                                                           
+}
+
+function Get-NumericRiskScore {
+    <#
+    .SYNOPSIS
+    Converts severity to numeric risk score with optional context-based weighting
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [ValidateSet('Critical','High','Medium','Low','Info')]
+        [string],
+
+        [string] = '',
+        [string]@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low} = ''
+    )
+
+     = switch () {
+        'Critical' { 95 }
+        'High'     { 80 }
+        'Medium'   { 55 }
+        'Low'      { 30 }
+        default    { 10 }
+    }
+
+    # Add context-based weight adjustments
+     = 0
+    if ( -match 'Privileged|Global Admin|Domain Admin') {  += 10 }
+    if ( -match 'OAuth|Service Principal')              {  += 5  }
+    if (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low} -match 'No Conditional Access|legacy auth') {  += 5  }
+
+    # Clamp to 0-100 range
+    [Math]::Min(100, [Math]::Max(0,  + ))
+}
+
+function Get-BusinessImpact {
+    <#
+    .SYNOPSIS
+    Classifies business impact based on finding context
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [hashtable]@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}
+    )
+
+         = if (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Area']) { @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Area'].ToString() } else { '' }
+          = if (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Finding']) { @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Finding'].ToString() } else { '' }
+     = if (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Severity']) { @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}['Severity'].ToString() } else { '' }
+
+    # Rule-based impact classification
+    if ( -match 'Privileged|Global Admin|Domain Admin' -or  -match 'MFA.*lack|PIM.*missing') {
+        return 'High: Privileged Access'
+    }
+    if ( -match 'OAuth|Service Principal|Application' -and  -match 'ReadWrite|expiring|long-lived') {
+        return 'High: App-to-tenant risk'
+    }
+    if ( -match 'Conditional Access' -and  -match 'No .* policies') {
+        return 'High: Zero Trust gap'
+    }
+    if ( -match 'Legacy Auth|IMAP|POP|SMTP') {
+        return 'Medium: Credential/Session Risk'
+    }
+    if ( -match 'Password Policy|FGPP') {
+        return 'Medium: Identity Hygiene'
+    }
+    if ( -match 'SPN|Kerberoast') {
+        return 'Medium: Lateral Movement Surface'
+    }
+    if ( -match 'GPO|OU Delegation|Trusts') {
+        return 'Medium: Configuration Risk'
+    }
+
+    # Fallback to severity-based classification
+    switch () {
+        'High'   { 'High: General' }
+        'Medium' { 'Medium: General' }
+        'Low'    { 'Low: General' }
+        default  { 'Informational' }
+    }
+}
+
+function New-MITRECategoryReport {
+    <#
+    .SYNOPSIS
+    Generates a categorized view of findings by MITRE tactics and security categories
+
+    .PARAMETER EnrichedFindings
+    Array of findings enriched with MITRE mappings
+
+    .PARAMETER OutputFolder
+    Path to output folder
+
+    .PARAMETER Timestamp
+    Timestamp for file naming
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [array]                                                                                                                                                                ,
+
+        [Parameter(Mandatory)]
+        [string],
+
+        [Parameter(Mandatory)]
+        [string]
+    )
+
+    Write-Host Generating MITRE category reports... -ForegroundColor Cyan
+
+    # Group by security category
+     =                                                                                                                                                                  | Group-Object SecurityCategory | ForEach-Object {
+        [PSCustomObject]@{
+            Category = .Name
+            Count = .Count
+            TotalRiskScore = (.Group | Measure-Object -Property RiskScore -Sum).Sum
+            HighSeverity = (.Group | Where-Object { .Severity -eq 'High' }).Count
+            MediumSeverity = (.Group | Where-Object { .Severity -eq 'Medium' }).Count
+            LowSeverity = (.Group | Where-Object { .Severity -eq 'Low' }).Count
+        }
+    } | Sort-Object TotalRiskScore -Descending
+
+    # Group by MITRE tactic
+     = @()
+    foreach (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low} in                                                                                                                                                                 ) {
+        if (@{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.MITRETactics -and @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.MITRETactics -ne 'N/A') {
+             = @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.MITRETactics -split ',\s*'
+            foreach ( in ) {
+                 += [PSCustomObject]@{
+                    Tactic = .Trim()
+                    Finding = @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.Finding
+                    Severity = @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.Severity
+                    Technique = @{Area=GPOs; Finding=64 GPOs have no links (candidates to retire or migrate to Intune); Severity=Low; Evidence=ad-gpo-links; Impact=Unlinked GPOs create configuration drift and potential security gaps if accidentally re-linked; RemediationSteps=1. Review unlinked GPOs in evidence CSV|2. Document purpose and historical context|3. Backup GPO settings using Backup-GPO cmdlet|4. Delete or archive unlinked GPOs after stakeholder approval|5. Plan migration of remaining security GPOs to Intune configuration profiles|6. Develop GPO decommissioning roadmap; Reference=https://learn.microsoft.com/en-us/mem/intune/configuration/device-profiles; EstimatedEffort=3-6 hours; Category=Modernization; Owner=; DueDate=; Status=Open; MITRETechniques=T1484; MITRETactics=Privilege Escalation, Defense Evasion; SecurityCategory=Attack Surface Reduction; HealthCategory=Modernization; RiskScore=3; BusinessImpact=Low}.MITRETechniques
+                }
+            }
+        }
+    }
+
+     =  | Group-Object Tactic | ForEach-Object {
+        [PSCustomObject]@{
+            Tactic = .Name
+            FindingCount = .Count
+            HighSeverity = (.Group | Where-Object { .Severity -eq 'High' }).Count
+            Techniques = ((.Group | Select-Object -ExpandProperty Technique -Unique) -join ', ')
+        }
+    } | Sort-Object FindingCount -Descending
+
+    # Export category reports
+     = Join-Path  findings-by-security-category-.csv
+     | Export-Csv  -NoTypeInformation -Force
+
+     = Join-Path  findings-by-mitre-tactic-.csv
+     | Export-Csv  -NoTypeInformation -Force
+
+    # Generate summary stats
+     = @{
+        TotalCategories = .Count
+        TotalTactics = .Count
+        TopSecurityCategory = ( | Select-Object -First 1).Category
+        TopTactic = ( | Select-Object -First 1).Tactic
+        FindingsWithMITRE = (                                                                                                                                                                 | Where-Object { .MITRETechniques -ne 'N/A' }).Count
+        AverageRiskScore = [math]::Round((                                                                                                                                                                 | Measure-Object -Property RiskScore -Average).Average, 1)
+    }
+
+    Write-Host  âœ Security Categories: 0
+  âœ MITRE Tactics: 0  -ForegroundColor Green
+    Write-Host  âœ Findings with MITRE mapping: /161
+New-MITRECategoryReport : The term 'New-MITRECategoryReport' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\ivolovnik\adreview\script.ps1:1213 char:16
++ $mitreReport = New-MITRECategoryReport `
++                ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (New-MITRECategoryReport:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+WARNING: CA gap analysis failed: The term 'Get-LatestFile' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+Building comprehensive HTML summary...

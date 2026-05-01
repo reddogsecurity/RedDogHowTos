@@ -103,5 +103,5 @@ Write-Host "  3. Integrate Invoke-InteractiveMode function" -ForegroundColor Gra
 Write-Host "  4. Test full integration" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Once integrated, run your script with no parameters:" -ForegroundColor Yellow
-Write-Host "  ./script.ps1" -ForegroundColor Cyan
+Write-Host "  .\script.ps1" -ForegroundColor Cyan
 Write-Host ""

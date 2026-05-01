@@ -1,0 +1,72 @@
+{
+  "privilegedADGroups": {
+    "tier0": [
+      "Domain Admins",
+      "Enterprise Admins", 
+      "Schema Admins",
+      "Administrators"
+    ],
+    "tier1": [
+      "Server Operators",
+      "Account Operators",
+      "Backup Operators",
+      "Print Operators",
+      "DnsAdmins"
+    ],
+    "tier2": [
+      "Helpdesk",
+      "Desktop Support",
+      "IT Support"
+    ]
+  },
+  "privilegedEntraRoles": {
+    "tier0": [
+      "Global Administrator",
+      "Privileged Role Administrator",
+      "Security Administrator"
+    ],
+    "tier1": [
+      "Application Administrator",
+      "Cloud Application Administrator",
+      "User Administrator",
+      "Exchange Administrator",
+      "SharePoint Administrator",
+      "Intune Administrator"
+    ],
+    "tier2": [
+      "Helpdesk Administrator",
+      "Service Support Administrator",
+      "Groups Administrator"
+    ]
+  },
+  "serviceAccountPatterns": [
+    ".*svc.*",
+    ".*service.*",
+    ".*spn.*",
+    ".*app.*",
+    ".*automation.*"
+  ],
+  "riskScoring": {
+    "severityWeights": {
+      "High": 10,
+      "Medium": 5,
+      "Low": 1
+    },
+    "relationshipWeights": {
+      "directAdminAccess": 10,
+      "groupMembership": 5,
+      "roleAssignment": 8,
+      "serviceAccount": 7,
+      "delegation": 6,
+      "trust": 4
+    },
+    "riskFactors": {
+      "privilegedGroupMembership": 8,
+      "multipleRoleAssignment": 6,
+      "serviceAccountUsage": 7,
+      "longTermCredentials": 5,
+      "externalAccess": 9,
+      "unusedAccounts": 3
+    }
+  }
+}

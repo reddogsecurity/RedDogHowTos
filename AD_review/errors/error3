@@ -1,0 +1,31 @@
+Generating Stakeholder Reports
+========================================
+Creating Excel workbook...
+WARNING: Excel export failed: At C:\Users\ivolovnik\adreview\Export-ExcelReport.ps1:164 char:2
++ }
++  ~
+The Try statement is missing its Catch or Finally block.
+
+At C:\Users\ivolovnik\adreview\Export-ExcelReport.ps1:247 char:17
++ Write-Host "`nðŸ’¡ Next Steps:" -ForegroundColor White
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+
+At C:\Users\ivolovnik\adreview\Export-ExcelReport.ps1:41 char:57
++ if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
++                                                         ~
+Missing closing '}' in statement block or type definition.
+Creating executive brief...
+WARNING: Executive brief export failed: At C:\Users\ivolovnik\adreview\Export-ExecutiveBrief.ps1:594 char:40
++ Write-Host "  Invoke-Item `"$htmlPath`"" -ForegroundColor Gray
++                                        ~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: ".
+
+At C:\Users\ivolovnik\adreview\Export-ExecutiveBrief.ps1:558 char:5
++ try {
++     ~
+Missing closing '}' in statement block or type definition.
+
+At C:\Users\ivolovnik\adreview\Export-ExecutiveBrief.ps1:599 char:1
++
+The Try statement is missing its Catch or Finally block.
