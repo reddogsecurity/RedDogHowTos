@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\AD-Map-Backend.props" />
-</Project>

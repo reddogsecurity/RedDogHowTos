@@ -1,0 +1,30 @@
+{
+  "email": {
+    "enabled": false,
+    "useGraph": true,
+    "smtpServer": "",
+    "smtpPort": 587,
+    "fromAddress": "ad-alerts@yourdomain.com",
+    "toAddresses": ["secops@yourdomain.com"],
+    "subjectPrefix": "[AD Security Alert]",
+    "onlyOnChange": true
+  },
+  "teams": {
+    "enabled": false,
+    "webhookUrl": "",
+    "channelName": "Security Alerts"
+  },
+  "slack": {
+    "enabled": false,
+    "webhookUrl": ""
+  },
+  "webhook": {
+    "enabled": false,
+    "url": "",
+    "authHeader": ""
+  },
+  "schedule": {
+    "retentionDays": 30,
+    "baselineFolder": "C:\\ADAssessments\\Baselines"
+  }
+}

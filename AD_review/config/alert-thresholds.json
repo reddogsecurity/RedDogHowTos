@@ -1,0 +1,35 @@
+{
+  "bruteForceThreshold": 10,
+  "passwordSprayThreshold": 20,
+  "passwordSprayWindowMinutes": 60,
+  "impossibleTravelWindowHours": 2,
+  "stalePrivilegedAccountDays": 90,
+  "ageOutDays": 30,
+  "knownIPRanges": [],
+  "dcsyncLegitimateExclusions": [
+    "Domain Controllers",
+    "ENTERPRISE DOMAIN CONTROLLERS",
+    "Administrators",
+    "NT AUTHORITY\\SYSTEM",
+    "NT AUTHORITY\\ENTERPRISE DOMAIN CONTROLLERS"
+  ],
+  "adminSDHolderLegitimateExclusions": [
+    "Domain Admins",
+    "Enterprise Admins",
+    "Schema Admins",
+    "Administrators",
+    "SYSTEM",
+    "NT AUTHORITY\\SYSTEM",
+    "BUILTIN\\Administrators",
+    "Account Operators",
+    "Backup Operators"
+  ],
+
+  "_mimecast_comment": "Thresholds for Mimecast email security analysis (Mimecast-Analyzer.psm1)",
+  "mimecastDLPViolationCount": 5,
+  "mimecastURLClickCount": 3,
+  "mimecastImpersonationThreshold": 2,
+  "mimecastSprayWindowMinutes": 60,
+  "mimecastSprayThreshold": 15,
+  "mimecastPrivilegedRisk": true
+}

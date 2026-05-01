@@ -1,0 +1,49 @@
+{
+  "_comment": "Mimecast integration configuration for AD Security Assessment.",
+  "_credentials": "Do NOT store credentials here. Set environment variables instead:",
+  "_env_vars": [
+    "MIMECAST_ACCESS_KEY  — Access Key from API 2.0 application",
+    "MIMECAST_SECRET_KEY  — Secret Key (Base64-encoded) from API 2.0 application",
+    "MIMECAST_APP_ID      — Application ID",
+    "MIMECAST_APP_KEY     — Application Key",
+    "MIMECAST_BASE_URL    — (optional) Regional base URL override"
+  ],
+
+  "baseUrl": "https://us-api.mimecast.com",
+  "_baseUrl_options": [
+    "https://us-api.mimecast.com  — US region",
+    "https://eu-api.mimecast.com  — EU region",
+    "https://de-api.mimecast.com  — Germany region",
+    "https://ca-api.mimecast.com  — Canada region",
+    "https://za-api.mimecast.com  — South Africa region",
+    "https://au-api.mimecast.com  — Australia / New Zealand region",
+    "https://offshore-api.mimecast.com — Offshore region"
+  ],
+
+  "daysBack": 1,
+  "_daysBack_comment": "Number of days of history to collect per run. Increase to 7 for initial baseline pull.",
+
+  "collectTTPUrl": true,
+  "_collectTTPUrl_comment": "Collect TTP URL Protect click logs (T1566.002). Requires URL Protect enabled.",
+
+  "collectDLP": true,
+  "_collectDLP_comment": "Collect DLP policy violation logs (T1048). Requires DLP policies configured.",
+
+  "collectSIEM": true,
+  "_collectSIEM_comment": "Collect SIEM event stream (T1110.003, T1114). Requires Enhanced Logging enabled in Mimecast account settings.",
+
+  "collectImpersonation": true,
+  "_collectImpersonation_comment": "Collect Impersonation Protect logs (T1566.001, T1656). Requires Impersonation Protect enabled.",
+
+  "siemTokenFile": ".mimecast-siem-token",
+  "_siemTokenFile_comment": "Filename (relative to OutputFolder) to persist the SIEM continuation token between runs for incremental collection.",
+
+  "scanResultFilter": "all",
+  "_scanResultFilter_options": "all, malicious, suspicious, clean — use 'all' to capture everything and let analyzer filter",
+
+  "pageSize": 500,
+  "_pageSize_comment": "Records per paginated API page (max 500). Reduce to 100 if experiencing timeouts.",
+
+  "apiTimeoutSeconds": 120,
+  "_apiTimeoutSeconds_comment": "HTTP request timeout in seconds. SIEM batch endpoint may be slow on large tenants."
+}
